@@ -1,0 +1,10 @@
+# This file is used internally by FFMPEG.
+file 'file:C:/Users/Richard Jr/Documents/GitHub/DiamondHack-Project/ManimTest/manimations/media/videos/sineInstance/1080p60/partial_movie_files/Sine/3977891868_2673270563_223132457.mp4'
+file 'file:C:/Users/Richard Jr/Documents/GitHub/DiamondHack-Project/ManimTest/manimations/media/videos/sineInstance/1080p60/partial_movie_files/Sine/2852726489_865914414_2278233317.mp4'
+file 'file:C:/Users/Richard Jr/Documents/GitHub/DiamondHack-Project/ManimTest/manimations/media/videos/sineInstance/1080p60/partial_movie_files/Sine/2852726489_3712885262_1465185149.mp4'
+file 'file:C:/Users/Richard Jr/Documents/GitHub/DiamondHack-Project/ManimTest/manimations/media/videos/sineInstance/1080p60/partial_movie_files/Sine/2852726489_2018259734_4136256562.mp4'
+file 'file:C:/Users/Richard Jr/Documents/GitHub/DiamondHack-Project/ManimTest/manimations/media/videos/sineInstance/1080p60/partial_movie_files/Sine/2852726489_1381654482_2074093004.mp4'
+file 'file:C:/Users/Richard Jr/Documents/GitHub/DiamondHack-Project/ManimTest/manimations/media/videos/sineInstance/1080p60/partial_movie_files/Sine/2852726489_4243369818_190375091.mp4'
+file 'file:C:/Users/Richard Jr/Documents/GitHub/DiamondHack-Project/ManimTest/manimations/media/videos/sineInstance/1080p60/partial_movie_files/Sine/2852726489_2913077282_2838668713.mp4'
+file 'file:C:/Users/Richard Jr/Documents/GitHub/DiamondHack-Project/ManimTest/manimations/media/videos/sineInstance/1080p60/partial_movie_files/Sine/2852726489_441270232_122148296.mp4'
+file 'file:C:/Users/Richard Jr/Documents/GitHub/DiamondHack-Project/ManimTest/manimations/media/videos/sineInstance/1080p60/partial_movie_files/Sine/2852726489_2408024828_836818009.mp4'
