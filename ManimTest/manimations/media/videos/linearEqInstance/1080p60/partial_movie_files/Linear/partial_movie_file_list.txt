@@ -1,0 +1,5 @@
+# This file is used internally by FFMPEG.
+file 'file:C:/Users/Richard Jr/Documents/GitHub/DiamondHack-Project/ManimTest/manimations/media/videos/linearEqInstance/1080p60/partial_movie_files/Linear/3977891868_3706894623_223132457.mp4'
+file 'file:C:/Users/Richard Jr/Documents/GitHub/DiamondHack-Project/ManimTest/manimations/media/videos/linearEqInstance/1080p60/partial_movie_files/Linear/2852726489_4287769745_610029798.mp4'
+file 'file:C:/Users/Richard Jr/Documents/GitHub/DiamondHack-Project/ManimTest/manimations/media/videos/linearEqInstance/1080p60/partial_movie_files/Linear/2852726489_1117933235_223132457.mp4'
+file 'file:C:/Users/Richard Jr/Documents/GitHub/DiamondHack-Project/ManimTest/manimations/media/videos/linearEqInstance/1080p60/partial_movie_files/Linear/2852726489_1839128356_1005266600.mp4'

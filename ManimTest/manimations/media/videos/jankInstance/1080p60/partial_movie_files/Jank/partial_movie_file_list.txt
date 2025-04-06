@@ -1,0 +1,5 @@
+# This file is used internally by FFMPEG.
+file 'file:C:/Users/Richard Jr/Documents/GitHub/DiamondHack-Project/ManimTest/manimations/media/videos/jankInstance/1080p60/partial_movie_files/Jank/3977891868_3968049389_223132457.mp4'
+file 'file:C:/Users/Richard Jr/Documents/GitHub/DiamondHack-Project/ManimTest/manimations/media/videos/jankInstance/1080p60/partial_movie_files/Jank/2852726489_2444456877_2960728070.mp4'
+file 'file:C:/Users/Richard Jr/Documents/GitHub/DiamondHack-Project/ManimTest/manimations/media/videos/jankInstance/1080p60/partial_movie_files/Jank/2852726489_3782028877_223132457.mp4'
+file 'file:C:/Users/Richard Jr/Documents/GitHub/DiamondHack-Project/ManimTest/manimations/media/videos/jankInstance/1080p60/partial_movie_files/Jank/2852726489_1839128356_987549046.mp4'
