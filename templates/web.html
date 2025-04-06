@@ -19,13 +19,13 @@
         <input type="reset" value="Clear">     <!- Changed button to reset -->
     </div>
     <video class="second" controls id="videoPlayer">
-        <source src="" type="video/mp4">
-        <source src="" type="video/ogg">
-    </video>
-    <script>
-        // You might want to modify this to handle the response after the form submission (video URL or error).
-        // fetch('/api/video') might not be the right approach anymore.
-    </script>
+    {% if video_url %}
+        <source src="{{ video_url }}" type="video/mp4">
+        <p>Your browser does not support HTML5 video.</p>
+    {% else %}
+        <p>No video generated yet.</p>
+    {% endif %}
+</video>
 </form>
 </body>
 </html>
