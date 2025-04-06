@@ -33,16 +33,60 @@
 </head>
 
 <body class="body">
-<h1 style="font-size: 50px;" class="textFont">Welcome to Our website</h1>
+<h1 style="font-size: 50px;" class="textFont">Welcome to Prism!</h1>
 <form action="/action_page.php">
-<p style="font-size: 20px;" class="textFont">The purpose of this website is to show how our project works</p>
 <div style="justify-content: center; display: flex;color :white ;">
     <div class="first"></div>
-    <label style="font-size: 20px;" style="text-align: right;"> Enter your equation below:</label><br>
-    <label style="font-size: 20px;" style="text-align: right;" for="equation">Equation:</label>
+    <label style="font-size: 20px;" style="text-align: right;"> Select from the type of equations in the dropdown menu by hovering and clicking:</label><br>
+
+    <style>
+        .dropbtn {
+          background-color: #04AA6D;
+          color: white;
+          padding: 16px;
+          font-size: 16px;
+          border: none;
+        }
+        
+        .dropdown {
+          position: relative;
+          display: inline-block;
+        }
+        
+        .dropdown-content {
+          display: none;
+          position: absolute;
+          background-color: #f1f1f1;
+          min-width: 160px;
+          box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+          z-index: 1;
+        }
+        
+        .dropdown-content a {
+          color: black;
+          padding: 12px 16px;
+          text-decoration: none;
+          display: block;
+        }
+        
+        .dropdown-content a:hover {background-color: #ddd;}
+        
+        .dropdown:hover .dropdown-content {display: block;}
+        
+        .dropdown:hover .dropbtn {background-color: #3e8e41;}
+        </style>
+
+    <div class="dropdown">
+  <button class="dropbtn">Dropdown</button>
+  <div class="dropdown-content">
+    <a href="#">Linear (y=mx+b)</a>
+    <a href="#">Trigonometry (Sin(x)=y)</a>
+    <a href="#">Coming soon...</a>
+  </div>
+</div>
+
     <input style="text-align: right;" id="equation" name="equation">
     <input style="text-align: right;" type="submit" value="Prepare Prompt">
-    <input style="text-align: right;" type="submit" value="Refresh">
 </div>
 <video class="second" controls>
     
