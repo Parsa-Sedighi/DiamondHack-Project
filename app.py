@@ -14,7 +14,7 @@ if not GOOGLE_API_KEY:
     print("Warning: GOOGLE_API_KEY environment variable not set.")
 else:
     genai.configure(api_key=GOOGLE_API_KEY)
-    model = genai.GenerativeModel('gemini-pro')
+    model = genai.GenerativeModel('gemini-2.0-flash')
 
 @app.route('/')
 def index():
