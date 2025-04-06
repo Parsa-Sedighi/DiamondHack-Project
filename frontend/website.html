@@ -1,38 +1,63 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <title>Equation to Manim Prompt</title>
-    <style>
-        body { font-family: sans-serif; margin: 20px; }
-        label { display: block; margin-bottom: 5px; }
-        input[type="text"] { width: 300px; padding: 8px; margin-bottom: 10px; border: 1px solid #ccc; }
-        input[type="submit"] { padding: 10px 15px; cursor: pointer; margin-right: 5px; }
-        .result { margin-top: 20px; padding: 15px; border: 1px solid #ccc; background-color: #f9f9f9; white-space: pre-wrap; /* Preserve whitespace */ }
-        pre { background-color: #eee; padding: 10px; border-radius: 4px; }
-    </style>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title> Welcome to Equation to Manim Prompt Generator</title>
+<style>
+ .body {
+        background-image: url("C:/Users/A/Pictures/Screenshots/Screenshot 2025-04-05 205416.png"); 
+        background-size: cover; 
+        background-repeat: no-repeat; 
+        background-attachment: fixed; 
+    }
+    .first{
+    width: 500px;
+    height:300px;
+    margin: 100px;
+    position: absolute;
+    ;
+}
+.second{
+
+   width: 80%;
+   height:45%;
+   position: relative;
+   margin: 100px;
+}
+.textFont{
+    
+    color :white ;
+    text-align: center;
+}
+</style>
 </head>
-<body>
 
-<h1>Equation to Manim Prompt Generator</h1>
-<p>Enter a mathematical function below. We'll prepare a prompt to ask an AI (Google's Gemini) to generate Manim code for it.</p>
-
-<form action="/prepare_prompt" method="post">
-    <label for="equation">Equation:</label>
-    <input type="text" id="equation" name="equation" required><br><br> 
-    <input type="submit" value="Prepare Prompt"> 
-    </form>
-
-{% if received_equation %}
-<div class="result">
-    <h2>Preparation Result</h2>
-    <p><strong>Received Equation:</strong> {{ received_equation }}</p>
-    <p><strong>Prepared Prompt for Gemini:</strong></p>
-    <pre>{{ prepared_prompt }}</pre> 
-    <hr>
-    <p><em>(Next step would be to send this prompt to the Gemini API, receive the Manim code, potentially validate it, and then execute it or display it.)</em></p>
+<body class="body">
+<h1 style="font-size: 50px;" class="textFont">Welcome to Our website</h1>
+<form action="/action_page.php">
+<p style="font-size: 20px;" class="textFont">The purpose of this website is to show how our project works</p>
+<div style="justify-content: center; display: flex;color :white ;">
+    <div class="first"></div>
+    <label style="font-size: 20px;" style="text-align: right;"> Enter your equation below:</label><br>
+    <label style="font-size: 20px;" style="text-align: right;" for="equation">Equation:</label>
+    <input style="text-align: right;" id="equation" name="equation">
+    <input style="text-align: right;" type="submit" value="Prepare Prompt">
+    <input style="text-align: right;" type="submit" value="Refresh">
 </div>
-{% endif %}
+<video class="second" controls>
+    
+  <source src="" type="video/mp4">
+  <source src="" type="video/ogg">
+</video>
+<script>
+    fetch('/api/video')
+        .then(response => response.json())
+        .then( data => {
+            document.getElementById('videoPlayer').src = data.video_url
+        });
+</script>
 
+</form>
 </body>
+
 </html>
