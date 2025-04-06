@@ -41,10 +41,11 @@
 
   <div class="container">
     <h1>Welcome to Prism!</h1>
+    <p1>Your step by step guide to Mathemmatic problems and equations!</p1>
 
     <form action="/action_page.php" method="POST">
       <!-- Equation type dropdown -->
-      <label for="equationType">Select the type of equation:</label>
+      <label for="equationType">Select the type of equation from the menu:</label>
       <select id="equationType" name="equationType" onchange="showInput()">
         <option value="none">-- Select --</option>
         <option value="linear">Linear (y = mx + b)</option>
@@ -59,11 +60,13 @@
 
       <!-- Linear inputs -->
       <div id="linearInputs" class="hidden">
-        <label for="m">Enter m value:</label>
-        <input type="text" name="m" id="m" placeholder="e.g., 2">
 
         <label for="x">Enter y value:</label>  <!-- Changed this to 'x' instead of 'y' -->
         <input type="text" name="y" id="y" placeholder="e.g., 5"> <!-- Changed 'y' to 'x' -->
+
+        <label for="m">Enter m value:</label>
+        <input type="text" name="m" id="m" placeholder="e.g., 2">
+
 
         <label for="b">Enter b value:</label>
         <input type="text" name="b" id="b" placeholder="e.g., 1">
