@@ -1,5 +1,6 @@
 import os
 import subprocess
+import shutil
 
 def find_and_replace_in_file(source_path, destination_path, old_text, new_text):
     """
@@ -41,7 +42,7 @@ def find_and_replace_in_file(source_path, destination_path, old_text, new_text):
     except Exception as e:
         print(f"An error occurred: {e}")
 
-def run_manim_scene(file_path, scene_name, quality='pl'):
+def run_manim_scene(file_path, scene_name, quality=''):
     """
     Runs a Manim scene using the command line interface.
 
@@ -53,7 +54,8 @@ def run_manim_scene(file_path, scene_name, quality='pl'):
                                  'ph' (preview high), 'ql' (quality low),
                                  'qm' (quality medium), and 'qh' (quality high).
     """
-    command = ['manim', file_path, scene_name, f'{quality}']
+    print(r'manim', file_path, scene_name)
+    command = [r'manim', file_path, scene_name]
     result = subprocess.run(command, capture_output=True, text=True)
 
     if result.returncode == 0:
@@ -63,22 +65,31 @@ def run_manim_scene(file_path, scene_name, quality='pl'):
         print("Error rendering Manim scene:")
         print(result.stderr)
 
-#JANK TEST TEMPLATE
-def manimJankTest(x, y):
-    
-    find_and_replace_in_file(r"Templates\jank.py", r"Instances\jankInstance.py", "++x", str(x))
-    find_and_replace_in_file(r"Instances\jankInstance.py", r"Instances\jankInstance.py", "++y", str(y))
-    run_manim_scene("Instances\jankInstance.py", "Jank")
-
 #Linear Equation Algebraic Solution
 def manimLinearEq(y, m, b):
     
-    find_and_replace_in_file(r"Templates\linearEq.py", r"Instances\linearEqInstance.py", "++y", str(y))
-    find_and_replace_in_file(r"Instances\linearEqInstance.py", r"Instances\linearEqInstance.py", "++m", str(m))
-    find_and_replace_in_file(r"Instances\linearEqInstance.py", r"Instances\linearEqInstance.py", "++b", str(b))
-    run_manim_scene("Instances\linearEqInstance.py", "Linear")
+    find_and_replace_in_file(r"ManimTest\manimations\Templates\linearEq.py", r"ManimTest\manimations\Instances\linearEqInstance.py", "++y", str(y))
+    find_and_replace_in_file(r"ManimTest\manimations\Instances\linearEqInstance.py", r"ManimTest\manimations\Instances\linearEqInstance.py", "++m", str(m))
+    find_and_replace_in_file(r"ManimTest\manimations\Instances\linearEqInstance.py", r"ManimTest\manimations\Instances\linearEqInstance.py", "++b", str(b))
+    run_manim_scene(r"ManimTest\manimations\Instances\linearEqInstance.py", "Linear")
+
+    source_path = r'media\videos\linearEqInstance\1080p60\Linear.mp4'
+    destination_path = r'output\output.mp4'
+
+    # Move the file
+    if (os.path.exists(destination_path)):
+        os.remove(destination_path)
+    os.rename(source_path, destination_path)
 
 #Sine Function Circle Explanation
 def manimSineFunc(r):
-    find_and_replace_in_file(r"Templates\sineFunc.py", r"Instances\sineInstance.py", "++r", str(r))
-    run_manim_scene("Instances\sineInstance.py", "Sine")
+    find_and_replace_in_file(r"ManimTest\manimations\Templates\sineFunc.py", r"ManimTest\manimations\Instances\sineInstance.py", "++r", str(r))
+    run_manim_scene(r"ManimTest\manimations\Instances\sineInstance.py", "Sine")
+
+    source_path = r'media\videos\sineInstance\1080p60\Sine.mp4'
+    destination_path = r'output\output.mp4'
+
+    # Move the file
+    if (os.path.exists(destination_path)):
+        os.remove(destination_path)
+    os.rename(source_path, destination_path)
