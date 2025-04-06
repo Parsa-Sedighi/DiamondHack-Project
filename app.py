@@ -2,10 +2,11 @@ from flask import Flask, render_template, request, jsonify
 import os
 import re
 import subprocess
-from manimations import manimCaller  # Adjust import path if needed
+from ManimTest.manimations import manimCaller  # Adjusted import path to match new project folder structure
 import google.generativeai as genai
 
 app = Flask(__name__, static_folder='static') # Serve static files from 'static'
+                                              # May need to be addressed as it doesn't do anything for now.
 
 # Configure Google Gemini API
 # /!\ Do NOT pass key through production!
