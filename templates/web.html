@@ -1,107 +1,108 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title> Welcome to Equation to Manim Prompt Generator</title>
-<style>
- .body {
-        background-image: url("/static/Screenshot 2025-04-05 205416.png"); 
-        background-size: cover; 
-        background-repeat: no-repeat; 
-        background-attachment: fixed; 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome to Equation to Manim Prompt Generator</title>
+  <style>
+    body {
+      background-image: url("/Users/parsasedighi/Documents/GitHub/diamondhacks-1/DiamondHack-Project/static/Screenshot 2025-04-05 205416.png"); 
+      background-size: cover; 
+      background-repeat: no-repeat; 
+      background-attachment: fixed; 
+      font-family: sans-serif;
+      color: white;
     }
-    .first{
-    width: 500px;
-    height:300px;
-    margin: 100px;
-    position: absolute;
-    ;
-}
-.second{
 
-   width: 80%;
-   height:45%;
-   position: relative;
-   margin: 100px;
-}
-.textFont{
-    
-    color :white ;
-    text-align: center;
-}
-</style>
+    .container {
+      width: 80%;
+      margin: auto;
+      margin-top: 100px;
+      text-align: center;
+    }
+
+    label, select, input {
+      margin: 10px;
+      font-size: 18px;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .second {
+      width: 80%;
+      height: 45%;
+      margin: 50px auto;
+      display: block;
+    }
+  </style>
 </head>
+<body>
 
-<body class="body">
-<h1 style="font-size: 50px;" class="textFont">Welcome to Prism!</h1>
-<form action="/process_equation" method="post">
-<div style="justify-content: center; display: flex;color :white ;">
-    <div class="first"></div>
-    <label style="font-size: 20px;" style="text-align: right;"> Select from the type of equations in the dropdown menu by hovering and clicking:</label><br>
+  <div class="container">
+    <h1>Welcome to Prism!</h1>
+    <p1>Your step by step guide to Mathemmatic problems and equations!</p1>
 
-    <style>
-        .dropbtn {
-          background-color: #04AA6D;
-          color: white;
-          padding: 16px;
-          font-size: 16px;
-          border: none;
-        }
-        
-        .dropdown {
-          position: relative;
-          display: inline-block;
-        }
-        
-        .dropdown-content {
-          display: none;
-          position: absolute;
-          background-color: #f1f1f1;
-          min-width: 160px;
-          box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-          z-index: 1;
-        }
-        
-        .dropdown-content a {
-          color: black;
-          padding: 12px 16px;
-          text-decoration: none;
-          display: block;
-        }
-        
-        .dropdown-content a:hover {background-color: #ddd;}
-        
-        .dropdown:hover .dropdown-content {display: block;}
-        
-        .dropdown:hover .dropbtn {background-color: #3e8e41;}
-        </style>
+    <form action="/action_page.php" method="POST">
+      <!-- Equation type dropdown -->
+      <label for="equationType">Select the type of equation from the menu:</label>
+      <select id="equationType" name="equationType" onchange="showInput()">
+        <option value="none">-- Select --</option>
+        <option value="linear">Linear (y = mx + b)</option>
+        <option value="trig">Trigonometry (sin(x) = y)</option>
+      </select>
 
-    <div class="dropdown">
-  <button class="dropbtn">Dropdown</button>
-  <div class="dropdown-content">
-    <a href="#">Linear (y=mx+b)</a>
-    <a href="#">Trigonometry (Sin(x)=y)</a>
-    <a href="#">Coming soon...</a>
+      <!-- Trig input -->
+      <div id="trigInputs" class="hidden">
+        <label for="trigX">Enter x value:</label>
+        <input type="text" name="trigX" id="trigX" placeholder="e.g., 30">
+      </div>
+
+      <!-- Linear inputs -->
+      <div id="linearInputs" class="hidden">
+
+        <label for="x">Enter y value:</label>  <!-- Changed this to 'x' instead of 'y' -->
+        <input type="text" name="y" id="y" placeholder="e.g., 5"> <!-- Changed 'y' to 'x' -->
+
+        <label for="m">Enter m value:</label>
+        <input type="text" name="m" id="m" placeholder="e.g., 2">
+
+
+        <label for="b">Enter b value:</label>
+        <input type="text" name="b" id="b" placeholder="e.g., 1">
+      </div>
+
+      <br>
+      <label for="equation">Enter full equation (optional):</label><br>
+      <input type="text" name="equation" id="equation"><br><br>
+
+      <input type="submit" value="Prepare Prompt">
+    </form>
+
+    <video class="second" controls>
+      <source src="" type="video/mp4">
+      <source src="" type="video/ogg">
+    </video>
   </div>
-</div>
 
-    <input style="text-align: right;" id="equation" name="equation">
-    <input style="text-align: right;" type="submit" value="Prepare Prompt">
-</div>
-<video class="second" controls>
-    
-  <source src="" type="video/mp4">
-  <source src="" type="video/ogg">
-</video>
-<script>
-    fetch('/api/video')
-        .then(response => response.json())
-        .then( data => {
-            document.getElementById('videoPlayer').src = data.video_url
-        });
-</script>
+  <script>
+    function showInput() {
+      const selection = document.getElementById('equationType').value;
+      const trigInputs = document.getElementById('trigInputs');
+      const linearInputs = document.getElementById('linearInputs');
 
-</form>
+      // Hide both first
+      trigInputs.classList.add('hidden');
+      linearInputs.classList.add('hidden');
+
+      // Show based on selection
+      if (selection === 'trig') {
+        trigInputs.classList.remove('hidden');
+      } else if (selection === 'linear') {
+        linearInputs.classList.remove('hidden');
+      }
+    }
+  </script>
+
 </body>
-
 </html>
