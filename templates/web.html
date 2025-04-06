@@ -1,63 +1,105 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title> Welcome to Equation to Manim Prompt Generator</title>
-<style>
- .body {
-        background-image: url("/Users/parsasedighi/Documents/GitHub/DiamondHack-Project/static/Screenshot 2025-04-05 205416.png"); 
-        background-size: cover; 
-        background-repeat: no-repeat; 
-        background-attachment: fixed; 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome to Equation to Manim Prompt Generator</title>
+  <style>
+    body {
+      background-image: url("/Users/parsasedighi/Documents/GitHub/diamondhacks-1/DiamondHack-Project/static/Screenshot 2025-04-05 205416.png"); 
+      background-size: cover; 
+      background-repeat: no-repeat; 
+      background-attachment: fixed; 
+      font-family: sans-serif;
+      color: white;
     }
-    .first{
-    width: 500px;
-    height:300px;
-    margin: 100px;
-    position: absolute;
-    ;
-}
-.second{
 
-   width: 80%;
-   height:45%;
-   position: relative;
-   margin: 100px;
-}
-.textFont{
-    
-    color :white ;
-    text-align: center;
-}
-</style>
+    .container {
+      width: 80%;
+      margin: auto;
+      margin-top: 100px;
+      text-align: center;
+    }
+
+    label, select, input {
+      margin: 10px;
+      font-size: 18px;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .second {
+      width: 80%;
+      height: 45%;
+      margin: 50px auto;
+      display: block;
+    }
+  </style>
 </head>
+<body>
 
-<body class="body">
-<h1 style="font-size: 50px;" class="textFont">Welcome to Our website</h1>
-<form action="/action_page.php">
-<p style="font-size: 20px;" class="textFont">The purpose of this website is to show how our project works</p>
-<div style="justify-content: center; display: flex;color :white ;">
-    <div class="first"></div>
-    <label style="font-size: 20px;" style="text-align: right;"> Enter your equation below:</label><br>
-    <label style="font-size: 20px;" style="text-align: right;" for="equation">Equation:</label>
-    <input style="text-align: right;" id="equation" name="equation">
-    <input style="text-align: right;" type="submit" value="Prepare Prompt">
-    <input style="text-align: right;" type="submit" value="Refresh">
-</div>
-<video class="second" controls>
-    
-  <source src="" type="video/mp4">
-  <source src="" type="video/ogg">
-</video>
-<script>
-    fetch('/api/video')
-        .then(response => response.json())
-        .then( data => {
-            document.getElementById('videoPlayer').src = data.video_url
-        });
-</script>
+  <div class="container">
+    <h1>Welcome to Prism!</h1>
 
-</form>
+    <form action="/action_page.php" method="POST">
+      <!-- Equation type dropdown -->
+      <label for="equationType">Select the type of equation:</label>
+      <select id="equationType" name="equationType" onchange="showInput()">
+        <option value="none">-- Select --</option>
+        <option value="linear">Linear (y = mx + b)</option>
+        <option value="trig">Trigonometry (sin(x) = y)</option>
+      </select>
+
+      <!-- Trig input -->
+      <div id="trigInputs" class="hidden">
+        <label for="trigX">Enter x value:</label>
+        <input type="text" name="trigX" id="trigX" placeholder="e.g., 30">
+      </div>
+
+      <!-- Linear inputs -->
+      <div id="linearInputs" class="hidden">
+        <label for="m">Enter m value:</label>
+        <input type="text" name="m" id="m" placeholder="e.g., 2">
+
+        <label for="x">Enter y value:</label>  <!-- Changed this to 'x' instead of 'y' -->
+        <input type="text" name="y" id="y" placeholder="e.g., 5"> <!-- Changed 'y' to 'x' -->
+
+        <label for="b">Enter b value:</label>
+        <input type="text" name="b" id="b" placeholder="e.g., 1">
+      </div>
+
+      <br>
+      <label for="equation">Enter full equation (optional):</label><br>
+      <input type="text" name="equation" id="equation"><br><br>
+
+      <input type="submit" value="Prepare Prompt">
+    </form>
+
+    <video class="second" controls>
+      <source src="" type="video/mp4">
+      <source src="" type="video/ogg">
+    </video>
+  </div>
+
+  <script>
+    function showInput() {
+      const selection = document.getElementById('equationType').value;
+      const trigInputs = document.getElementById('trigInputs');
+      const linearInputs = document.getElementById('linearInputs');
+
+      // Hide both first
+      trigInputs.classList.add('hidden');
+      linearInputs.classList.add('hidden');
+
+      // Show based on selection
+      if (selection === 'trig') {
+        trigInputs.classList.remove('hidden');
+      } else if (selection === 'linear') {
+        linearInputs.classList.remove('hidden');
+      }
+    }
+  </script>
+
 </body>
-
 </html>
